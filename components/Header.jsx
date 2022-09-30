@@ -14,7 +14,10 @@ const Header = () => {
         <div className="md:float-left block">
           <Link href="/">
             <span className="cursor-pointer font-bold text-4xl text-bluish">
-              Blog - Jean Desauw
+              Blog{' '}
+              <span className="text-black">
+                - Jean Desauw
+              </span>
             </span>
           </Link>
         </div>
@@ -24,7 +27,7 @@ const Header = () => {
               key={category.slug}
               href={`/category/${category.slug}`}
             >
-              <span className="md:float-right mt-2 align-middle  ml-4 font-semibold cursor-pointer uppercase hover:text-bluish">
+              <span className="md:float-right mt-2 align-middle ml-4 font-semibold cursor-pointer uppercase hover:text-bluish hover:drop-shadow-sm">
                 {category.name}
               </span>
             </Link>
