@@ -104,6 +104,7 @@ const PostDetail = ({ post }) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
+            className="m-auto rounded-sm"
           />
         );
       default:
