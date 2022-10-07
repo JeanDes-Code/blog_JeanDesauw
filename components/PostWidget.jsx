@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
+import Image from 'next/image';
+
 import {
   getRecentPosts,
   getSimilarPosts,
 } from '../services';
+import { graphCMSImageLoader } from '../util';
 
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -26,14 +29,16 @@ const PostWidget = ({ categories, slug }) => {
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
         {slug ? 'Articles Similaires' : 'Articles Récents'}
       </h3>
-      {relatedPosts.map((post) => (
+      {relatedPosts.map((post, index) => (
         <div
-          key={post.title}
+          key={index}
           className="flex items-center w-full mb-4"
         >
           <div className="w-16 flex-none">
-            <img
+            <Image
+              loader={graphCMSImageLoader}
               alt={post.title}
+              unoptimized
               height="60px"
               width="60px"
               className="align-middle rounded-full"

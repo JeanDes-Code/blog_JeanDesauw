@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { graphCMSImageLoader } from '../util';
+
 const Author = ({ author }) => {
   return (
     <div className="text-center mt-20 mb-8 p-12 relative rounded-lg bg-bluish bg-opacity-70">
       <div className="absolute left-0 right-0 -top-14">
         <Image
           alt={author.name}
+          loader={graphCMSImageLoader}
           unoptimized
           height="100px"
           width="100px"
