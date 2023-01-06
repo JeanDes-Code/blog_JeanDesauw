@@ -11,8 +11,8 @@ const Author = ({ author }) => {
           alt={author.name}
           loader={graphCMSImageLoader}
           unoptimized
-          height="100px"
-          width="100px"
+          height={100}
+          width={100}
           className="align-middle rounded-full object-cover"
           src={author.photo.url}
         />
